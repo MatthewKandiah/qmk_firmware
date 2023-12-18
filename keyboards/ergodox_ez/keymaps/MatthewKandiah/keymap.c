@@ -30,7 +30,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_NO,         KC_F1,        KC_F2,          KC_F3,     KC_F4,        KC_F5,    KC_F11,                    KC_F12,      KC_F6,    KC_F7,    KC_F8,    KC_F9,              KC_F10,            KC_NO,
   KC_NO,         KC_EXLM,      KC_DQUO,        KC_LCBR,   KC_RCBR,      KC_PIPE,  KC_CAPS,                   KC_CAPS,     KC_NUBS,  KC_LT,    KC_GT,    KC_EQL,             KC_PLUS,           KC_NO,
   KC_NO,         KC_PERC,      LSFT(KC_NUBS),  KC_LPRN,   KC_RPRN,      KC_GRV,                                           KC_SLSH,  KC_QUOT,  KC_AT,    KC_MINS,            KC_UNDS,           KC_NO,
-  KC_NO,         KC_CIRC,      KC_DLR,         KC_LBRC,   KC_RBRC,      KC_LSFT(KC_3),KC_CAPS,               KC_CAPS,     KC_GRV,   KC_AMPR,  KC_NUHS,  KC_ASTR,            KC_QUES,           KC_NO,
+  KC_NO,         KC_CIRC,      KC_DLR,         KC_LBRC,   KC_RBRC,      LSFT(KC_3),KC_CAPS,               KC_CAPS,     KC_GRV,   KC_AMPR,  KC_NUHS,  KC_ASTR,            KC_QUES,           KC_NO,
   TO(0),         KC_TRNS,      KC_TRNS,        KC_TRNS,   KC_TRNS,                                                                  KC_TRNS,  KC_TRNS,  KC_TRNS,            KC_TRNS,           TO(2),
                                                                       KC_TRNS,    KC_TRNS,                     KC_TRNS,       KC_TRNS,
                                                                                   KC_TRNS,                     KC_TRNS,
