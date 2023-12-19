@@ -82,15 +82,3 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 };
 // clang-format on
-bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case LGUI_T(KC_A):
-        case RGUI_T(KC_O):
-        case LCTL_T(KC_A):
-        case RCTL_T(KC_O):
-            return false;
-        default:
-            return true;
-    }
-}
-
