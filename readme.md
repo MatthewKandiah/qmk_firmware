@@ -1,3 +1,6 @@
+# What have I done?
+It looks like the Framework fork of `qmk_firmware` is not kept up-to-date with the upstream repo, and I got build errors when I just tried merging them together and compiling a keymap. I've checked out the most recent tagged release `v0.2.9` of the Framework fork and created a modified keymap for my board, which built and flashed successfully. If making changes later, it would be worth checking if there have been other tagged releases in case we want to pull in updates/fixes.
+
 # THIS IS THE DEVELOP BRANCH
 
 Warning- This is the `develop` branch of QMK Firmware. You may encounter broken code here. Please see [Breaking Changes](https://docs.qmk.fm/#/breaking_changes) for more information.
