@@ -66,3 +66,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 // clang-format on
 
+uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LT(_SYMBOLS, KC_SPC):
+            return 0;
+        default:
+            return TAPPING_TERM;
+    }
+}
