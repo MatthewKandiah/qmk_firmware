@@ -16,7 +16,7 @@ enum _layers {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT(
-        KC_ESC, KC_MUTE, KC_VOLD, KC_VOLU, KC_MPRV, KC_MPLY, KC_MNXT, KC_BRID, KC_BRIU, KC_SCRN, XXXXXXX, KC_PSCR, KC_NO, KC_INS,
+        KC_ESC,  KC_MUTE, KC_VOLD, KC_VOLU, KC_MPRV, KC_MPLY, KC_MNXT, KC_BRID, KC_BRIU, KC_SCRN, XXXXXXX, KC_PSCR, KC_NO, KC_INS,
         KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_BSPC,
         KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC,
         KC_CAPS, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, KC_NUHS, KC_ENT,
@@ -25,12 +25,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_COLEMAK] = LAYOUT(
-        KC_ESC, KC_MUTE, KC_VOLD, KC_VOLU, KC_MPRV, KC_MPLY, KC_MNXT, KC_BRID, KC_BRIU, KC_SCRN, XXXXXXX, KC_PSCR, KC_NO, KC_INS,
-        KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_BSPC,
+        KC_ESC,  KC_MUTE, KC_VOLD, KC_VOLU, KC_MPRV, KC_MPLY, KC_MNXT, KC_BRID, KC_BRIU, KC_SCRN, XXXXXXX, KC_PSCR, KC_NO, KC_INS,
+        KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL, KC_CAPS,
         KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,    KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN,    KC_LBRC, KC_RBRC,
         LT(_NAVIGATION, KC_ESC), LGUI_T(KC_A),    LALT_T(KC_R),    LSFT_T(KC_S),    LCTL_T(KC_T),    KC_G,    KC_M,    RCTL_T(KC_N),    RSFT_T(KC_E),    RALT_T(KC_I),    RGUI_T(KC_O),    KC_QUOT, KC_NUHS, KC_ENT,
-        KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    LT(_NUMPAD, KC_BSPC),   KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH,     KC_RSFT,
-        KC_LCTL, MO(_FN), KC_LGUI, KC_CAPS,          LT(_SYMBOLS, KC_SPC),                    KC_ENT, KC_RCTL, KC_LEFT, KC_UP,   KC_DOWN, KC_RGHT
+        KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    MO(_NUMPAD),   KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH,     KC_RSFT,
+        KC_LCTL, MO(_FN), KC_LGUI, KC_BSPC,          LT(_SYMBOLS, KC_SPC),                    KC_ENT, KC_RCTL, KC_LEFT, KC_UP,   KC_DOWN, KC_RGHT
     ),
 
     [_SYMBOLS] = LAYOUT(
@@ -79,3 +79,20 @@ uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t *record) {
             return TAPPING_TERM;
     }
 }
+
+bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LGUI_T(KC_A):
+        case RGUI_T(KC_O):
+        case LALT_T(KC_R):
+        case RALT_T(KC_I):
+        case LSFT_T(KC_S):
+        case RSFT_T(KC_E):
+        case LCTL_T(KC_T):
+        case RCTL_T(KC_N):
+            return false;
+        default:
+            return true;
+    }
+}
+
