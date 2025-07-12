@@ -2,18 +2,18 @@
 
 #define TO_BASE TO(_BASE)
 #define TO_MAC TO(_BASE_MAC)
-#define GUIA LGUI_T(KC_A)
-#define GUIT LGUI_T(KC_T)
-#define ALTR LALT_T(KC_R)
-#define SFTS LSFT_T(KC_S)
-#define CTLT LCTL_T(KC_T)
-#define CTLA LCTL_T(KC_A)
-#define CTLN RCTL_T(KC_N)
-#define CTLO RCTL_T(KC_O)
-#define SFTE RSFT_T(KC_E)
-#define ALTI RALT_T(KC_I)
-#define GUIO RGUI_T(KC_O)
-#define GUIN RGUI_T(KC_N)
+#define GUIA GUI_T(KC_A)
+#define GUIT GUI_T(KC_T)
+#define ALTR ALT_T(KC_R)
+#define SFTS SFT_T(KC_S)
+#define CTLT CTL_T(KC_T)
+#define CTLA CTL_T(KC_A)
+#define CTLN CTL_T(KC_N)
+#define CTLO CTL_T(KC_O)
+#define SFTE SFT_T(KC_E)
+#define ALTI ALT_T(KC_I)
+#define GUIO GUI_T(KC_O)
+#define GUIN GUI_T(KC_N)
 #define BSPSYM LT(_SYMBOLS, KC_BSPC)
 #define BSPMSYM LT(_SYMBOLS_MAC, KC_BSPC)
 #define ESCNUM LT(_NUMPAD, KC_ESC)
@@ -86,10 +86,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case LGUI_T(KC_A):
-        case RGUI_T(KC_O):
-        case LCTL_T(KC_A):
-        case RCTL_T(KC_O):
+        case GUI_T(KC_A):
+        case GUI_T(KC_O):
+        case CTL_T(KC_A):
+        case CTL_T(KC_O):
             return false;
         default:
             return true;
